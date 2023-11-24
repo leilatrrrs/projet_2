@@ -1,6 +1,7 @@
 /****** General ***********/
 * {
     font-family: 'Raleway', sans-serif;
+    margin:0;
 }
 
 :root {
@@ -16,75 +17,37 @@
 /*header*/
 header {
     display: flex;
-    flex-direction: row;
-    width: 1440px;
-    height: 79px;
-    align-items: center;
+    max-width: 1440px;
     justify-content: space-between;
-    margin-bottom: 30px;
-    
-
-}
-
-.logo {
-    width: 161.09px;
-    height: 79px;
-
+    margin:auto;    
+    padding:0 15px;
 }
 
 .logo img {
     width: 61.09px;
-    height: 19px;
-    gap: 10px;
-    margin-right: 100px;
-    margin-top: 20px;
+    margin:20px 0;
 }
 
-.menu {
-    width: 344px;
-    height: 35px;
-    gap: 68px;
-}
-
-ul {
+nav ul {
     list-style-type: none;
     display: flex;
     padding: 0;
-    margin: 0;
     gap: 68px;
-    width: 244px;
-    height: 35px;
-    font-size:16px;
-    font-weight: 400;
 }
 
-.btn-hebergements {
-    width: 113px;
-    height: 35px;
-    position: relative;
-    bottom: 25px;
-    border-top: transparent #F2F2F2 2px solid;
-  
+nav a {
+    color:#000;
+    transition:all 0.2s ease;
 }
 
-.btn-activites {
-    width: 63px;
-    height: 35px;
-    position: relative;
-    bottom: 25px;
-    border-top: transparent #F2F2F2 2px solid;
+nav ul li {
+    padding-top: 15px;
 }
 
-.btn-hebergements:hover {
-    color: #0065FC;
-    transition: border-top 0.1s ease;
-    border-top: #0065FC solid 2px;
-}
-
-.btn-activites:hover {
-    color: #0065FC;
-    transition: border-top 0.1s ease;
-    border-top: #0065FC solid 2px;
+nav a:hover {
+    color:var(--main-color);
+    border-top:2px solid var(--main-color);
+    padding-top:12px;
 }
 /*fin header */
 
@@ -92,179 +55,81 @@ ul {
 /*footer*/
 footer {
     background-color:#F2F2F2 ;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 1340px;
-    height: 163px;
+    display: flex;
+    /* flex-wrap: wrap; pour faire passer les éléments les uns en dessous des autres quand l'écran réduit */
+    max-width: 1440px;
+    justify-content: space-between; /* pour que les blocs hebergement et assiatances soit a la bonne place */
+    margin: auto; /* pour rester fidèle a la maquette, les marges des cotés seront enlevé grace au media queries plus bas dans le code */
     margin-top: 35px;
-    
+    padding:0 15px; /* on ne le distingue pas, il est en gris */
 }
-.a-propos  {
+
+.bloc-hebergements, /* Pour que tous les blocs soient dans le bn alignement verticalement */
+.assistance,
+.a-propos {
     display: flex;
     flex-direction: column;
-    width: 446.67px;
-    height: 163px;
-    margin-top: 10px ;
-    gap: 25px;
-    justify-content: flex-start;
-    color: #000000;
-    
+    margin:20px 260px 20px 20px;
+    gap: 15px;
+    max-width: 480px;
 }
-.a-propos ul {
+
+footer ul{
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-left: 10px;
-    margin: 0;
-    height: 13px;
-    font-size: 16px;
-    justify-content: space-around;
-    align-content:flex-start ;
-
+    flex-direction: column;/* les liens soient alignés verticalement */
+    gap: 15px;
+    padding: 0; /* les liens soient sous les sous-titres */
+    list-style-type: none;
 }
 
-.a-propos a {
-    padding-bottom: 10px;
-}
-
-.a-propos h2 {
+footer h2 {
     font-size: 18px;
-    width: 77px;
-    height: 21px;
-    padding-left: 10px ;
-    padding-bottom: 20px;
-    margin-top: 6px;
-    margin-right: -30px;
 }
-
-
-.bloc-hebergements {
-    display: flex;
-    flex-direction: column;
-    width: 446.67px;
-    height: 163px;
-    margin-top: 10px ;
-    justify-content: space-between;
-}
-
-.bloc-hebergements ul {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-left: 10px;
-    padding-bottom: 80px;
-    margin: 0;
-    height: 13px;
-    font-size: 16px;
-    justify-content: space-around;
-    align-content:flex-start ;
-}
-
-.bloc-hebergements a {
-    padding-bottom: 10px;
-}
-
-.bloc-hebergements h2 {
-    white-space: nowrap;
-    font-size: 18px;
-    width: 77px;
-    height: 21px;
-    padding-left: 10px ;
-    margin-top: 7px;
-    margin-bottom: 5px;
-}
-
-.assistance {
-    display: flex;
-    flex-direction: column;
-    width: 446.67px;
-    height: 163px;
-    margin-top: 10px ;
-    gap: 25px;
-    justify-content: space-around; 
- 
-}
-
-.assistance ul {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-left: 10px;
-    padding-bottom: 75px;
-    margin: 0;
-    font-size: 16px;
-    justify-content: space-around;
-    align-content:flex-start ;
-}
-
-.assistance a {
-    padding-bottom: 10px;
-}
-
-.assistance h2 {
-    font-size: 18px;
-    width: 77px;
-    height: 21px;
-    padding-left: 10px ;
-    margin-bottom: 5px;
-}
-
 
 /*fin footer*/
+main {
+    padding: 0 15px;
+}
+/* N'oublie pas le max width et le margin auto. Ne travaille plus avec des width et des height contraints  */
 
-.info-group {
+.info-group { /* quand je réduis la taille de l'écran les marges disparaissent */
     display: flex;
     flex-direction: column;
-    width: 1340px;
-    height: 281px;
+    max-width: 1440px; /* aligné sous logo "booki" */
+    margin:30px auto;/* Pour que les marges haut/bas = celles de la maquette */
     gap: 35px;
-    margin-bottom: 35px;
 }
 
-.headline {
-    height: 53px;
+.info-group h1 {
+    font-size: 22px;
+}
+
+.headline  { /* pour qu'il y ait un gap de 8px entre le h1 et le p */
+    display: flex;
+    flex-direction: column;
     gap: 8px;
 }
-
-.headline h1 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    margin-top: 0 ;
-
-}
-
-.headline p {
-    height: 19px;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
-    color: #000000;
-}
-
 
 /*début searchbar*/
 form {
     display: flex;
-    border: none;
-    background-color: #ffffff;
+}
+
+.fa-solid.fa-location-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
     color: #000000;
-    font-weight: 600;
-}
-.searchbar {
-    width: 377px ;
-    height: 49px fixed;
-
+    background-color: #F2F2F2;
+    border-radius:15px 0 0 15px ;
+    font-size: 18px;
 }
 
-input[type="text"] {
+ input[type="text"] {
     border: transparent;
-    color: #000000;
     padding-left: 19px; 
     padding-right:24px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 #searchinput::placeholder{
@@ -275,30 +140,6 @@ input[type="text"] {
     height: 21px;
 }
 
-.rectangle {
-    background-color: #F2F2F2;
-    width: 50px;
-    height: 49px;
-    border-radius:15px 0px 0px 15px ;
-    border: 1px #F2F2F2;
-    padding-right: 0;
-}
-
-.fa-location-dot {
-    width: 17px;
-    height: 17px;
-    display: flex;
-    color: #000000;
-}
- .icon-dot {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    margin-top: 15px;
-    margin-left: 4px;
-    font-size:1.2em ;
- }
-
 button {
     background-color: #0065FC;
     color: white;
@@ -308,51 +149,42 @@ button {
     font-size: 1em;
     font-weight: bold;
     width: 132px;
-    height: 49px;
 }
 
 
 /*fin searchbar*/
 
-
 /* début filter bar*/
 
 .filter-bar{
     display: flex;
-    flex-direction:row ;
+    align-items: center;
     font-weight: bold;
-    width: 758px;
-    height: 50px;
+    max-width: 1440px;
     gap: 15px;
-    white-space: nowrap;
-    list-style: none;
     font-size: 17px;
-
 }
 
 .filter-bar p {
  width: 54px;
- height: 21px;
  line-height: 21.13px;
  font-size: 18px;
-
 }
+
+/*mets le a au centre de la bulle*/
+.filter-bar a {
+    display: flex;
+    align-items: center;
+}
+
 /* aligner, centrer mettre a la bonne tailles les liens + logo*/
 .btn-filter-price {
     width: 173px;
     height: 50px;
     display: flex;
     justify-content: center;
-    text-align: center;
     border-radius: 25px;
     border: solid 2px #d9d9d9;
-    font-weight: bold;
-}
-/*mets le a au centre de la bulle*/
-.btn-filter-price a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .btn-filter-family {
@@ -360,15 +192,8 @@ button {
     height: 50px;
     display: flex;
     justify-content: center;
-    text-align: center;
     border-radius: 25px;
     border: solid 2px #d9d9d9;
-    font-weight: bold;
-}
-.btn-filter-family a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .btn-filter-romantic {
@@ -376,15 +201,8 @@ button {
     height: 50px;
     display: flex;
     justify-content: center;
-    text-align: center;
     border-radius: 25px;
     border: solid 2px #d9d9d9;
-    font-weight: bold;
-}
-.btn-filter-romantic a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .btn-filter-fire {
@@ -392,17 +210,10 @@ button {
     height: 50px;
     display: flex;
     justify-content: center;
-    text-align: center;
     border-radius: 25px;
     border: solid 2px #d9d9d9;
-    font-weight: bold;
 }
-.btn-filter-fire a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* JE DOIS RAJOUTER LES STYLES DANS LE CSS */
 /* :before ?? apparait dans la console*/
 .fa-money-bill-wave:before,
 .fa-person:before,
@@ -460,12 +271,12 @@ button {
 /* fin info-bar*/
 
 
-body {
+/* body {
     display: flex;
     justify-content: center;
     width: 1440px;
     height: 1831.02px;
-}
+} */
 
 .main-container {
     width: 100%;
@@ -612,5 +423,10 @@ a {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    /* ... */
+    /* quand l'écran est réduit, les marges (gauche/droite) du footer disparaissent pour rester fidele à la maquette */
+    /* les marges haut/bas ont l'air d'être les mêmes sur la maquettes, je ne les ai pas modifié ici */
+    footer {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
